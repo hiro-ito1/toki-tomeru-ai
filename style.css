@@ -1,0 +1,344 @@
+/* ===========================================================
+   時を止める指導法AI ― 配布ページ  和モダン（黒 × 赤 × 白）
+   =========================================================== */
+
+:root {
+  --bg:        #0c0c0d;   /* 墨黒 */
+  --bg-soft:   #141416;   /* 少し明るい黒 */
+  --panel:     #1a1a1d;   /* カード背景 */
+  --line:      #2a2a2e;   /* 罫線 */
+  --ink:       #f4f1ea;   /* 生成り白 */
+  --ink-dim:   #b8b4ab;   /* 薄墨白 */
+  --aka:       #c8102e;   /* 朱赤 */
+  --aka-deep:  #8b0000;   /* 深紅 */
+  --aka-soft:  rgba(200,16,46,0.12);
+  --gold:      #c9a86a;   /* 差し色の金 */
+  --maxw:      860px;
+  --serif: "Noto Serif JP", "Yu Mincho", "游明朝", serif;
+  --sans:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.9;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.02em;
+}
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- ヒーロー ---------- */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 96px 24px 72px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+/* 円相（ensō）― 禅の筆の輪。「時を止める」の象徴 */
+.enso {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: min(520px, 86vw);
+  height: min(520px, 86vw);
+  transform: translate(-50%, -52%);
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * { position: relative; z-index: 1; }
+
+.brand-mark {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.5em;
+  color: var(--gold);
+  margin-bottom: 28px;
+  padding-left: 0.5em;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 6.5vw, 3.6rem);
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.6);
+}
+
+.hero h1 .aka { color: var(--aka); }
+
+.hero .lead {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 3.2vw, 1.3rem);
+  color: var(--ink);
+  line-height: 1.9;
+  max-width: 26em;
+  margin: 0 auto 14px;
+}
+
+.hero .sub {
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+  margin-top: 18px;
+}
+
+.hero .free-badge {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 8px 22px;
+  border: 1px solid var(--aka);
+  border-radius: 999px;
+  color: var(--aka);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+/* ---------- セクション共通 ---------- */
+section { padding: 72px 0; }
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 48px; height: 2px;
+  background: var(--aka);
+  margin: 18px auto 0;
+}
+
+.section-note {
+  text-align: center;
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+  margin-bottom: 48px;
+}
+
+/* ---------- 哲学カード ---------- */
+.philo { background: var(--bg-soft); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--aka);
+  border-radius: 4px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover { transform: translateY(-4px); border-top-color: var(--gold); }
+
+.card .num {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--aka);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.card h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+
+.card p { color: var(--ink-dim); font-size: 0.92rem; line-height: 1.85; }
+
+/* ---------- キャッチ引用 ---------- */
+.quote {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.quote blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  line-height: 2;
+  letter-spacing: 0.04em;
+  max-width: 24em;
+  margin: 0 auto;
+  position: relative;
+}
+
+.quote blockquote::before {
+  content: "「";
+  color: var(--aka);
+  font-size: 2.4em;
+  position: absolute;
+  top: -0.4em; left: -0.5em;
+  opacity: 0.5;
+}
+
+.quote blockquote::after {
+  content: "」";
+  color: var(--aka);
+  font-size: 2.4em;
+  position: absolute;
+  bottom: -0.9em; right: -0.4em;
+  opacity: 0.5;
+}
+
+/* ---------- コピー部 ---------- */
+.copy-section { background: var(--bg-soft); text-align: center; }
+
+.copy-box {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 48px 32px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.copy-box .toc {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  line-height: 2;
+  margin-bottom: 32px;
+}
+
+.copy-box .toc strong { color: var(--ink); font-weight: 700; }
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--aka);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: none;
+  border-radius: 6px;
+  padding: 20px 48px;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(200,16,46,0.35);
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.copy-btn:hover { background: var(--aka-deep); box-shadow: 0 10px 34px rgba(200,16,46,0.45); }
+.copy-btn:active { transform: translateY(2px); }
+
+.copy-btn svg { width: 22px; height: 22px; }
+
+.copy-btn.done {
+  background: #1f7a3d;
+  box-shadow: 0 8px 28px rgba(31,122,61,0.4);
+}
+
+.copy-hint {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+
+.copy-fallback {
+  margin-top: 14px;
+  font-size: 0.85rem;
+}
+
+.copy-fallback a { color: var(--gold); }
+
+/* ---------- 使い方ステップ ---------- */
+.steps { counter-reset: step; max-width: 620px; margin: 0 auto; }
+
+.step {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  padding: 26px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.step:last-child { border-bottom: none; }
+
+.step .badge {
+  flex: 0 0 auto;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--aka-soft);
+  border: 1px solid var(--aka);
+  color: var(--aka);
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  counter-increment: step;
+}
+.step .badge::before { content: counter(step); }
+
+.step .body h4 { font-size: 1.05rem; margin-bottom: 6px; font-family: var(--serif); letter-spacing: 0.04em; }
+.step .body p { color: var(--ink-dim); font-size: 0.92rem; }
+.step .body code {
+  background: #000;
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+/* ---------- フッター ---------- */
+footer {
+  text-align: center;
+  padding: 56px 24px 64px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+footer .f-title { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.1em; margin-bottom: 14px; }
+footer p { color: var(--ink-dim); font-size: 0.88rem; line-height: 1.9; }
+footer .copyright { margin-top: 24px; font-size: 0.8rem; color: #6a665e; }
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width: 680px) {
+  .cards { grid-template-columns: 1fr; }
+  section { padding: 56px 0; }
+  .hero { padding: 72px 20px 56px; }
+  .copy-box { padding: 36px 22px; }
+  .copy-btn { width: 100%; justify-content: center; padding: 20px 24px; }
+}
+
+/* ---------- トースト ---------- */
+.toast {
+  position: fixed;
+  left: 50%; bottom: 32px;
+  transform: translateX(-50%) translateY(120%);
+  background: #1f7a3d;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+  transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1);
+  z-index: 100;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
