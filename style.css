@@ -297,6 +297,87 @@ section { padding: 72px 0; }
 
 .copy-fallback a { color: var(--gold); }
 
+/* ---------- 配布カード（2枚並び） ---------- */
+.dist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* グリッド内ではカード幅を解除（.copy-box の max-width:640px を上書き） */
+.dist-card.copy-box {
+  max-width: none;
+  margin: 0;
+  padding: 32px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.step-badge {
+  align-self: flex-start;
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--aka);
+  border-radius: 999px;
+  padding: 5px 16px;
+  margin-bottom: 16px;
+}
+.step-badge.alt {
+  color: var(--ink-dim);
+  background: transparent;
+  border: 1px solid var(--line);
+}
+
+.dist-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.dist-sub {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+/* 強調カード（まず、ここから） */
+.dist-card.featured {
+  border: 1px solid var(--aka);
+  box-shadow: 0 0 0 1px rgba(200,16,46,0.25), 0 14px 44px rgba(200,16,46,0.18);
+}
+
+/* コーチの熱いコメント */
+.coach-note {
+  border-left: 3px solid var(--aka);
+  background: var(--aka-soft);
+  border-radius: 0 6px 6px 0;
+  padding: 16px 18px;
+  margin-bottom: 24px;
+}
+.coach-note p {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--ink);
+  margin: 0;
+}
+.coach-note p + p { margin-top: 8px; }
+.coach-note strong { color: var(--aka); font-weight: 700; }
+
+/* カード内ではボタンを下端に揃える */
+.dist-card .toc { flex: 1 0 auto; }
+.dist-card .copy-btn { width: 100%; justify-content: center; margin-top: auto; }
+.dist-card .copy-fallback { text-align: center; }
+
 /* ---------- 使い方ステップ ---------- */
 .steps { counter-reset: step; max-width: 620px; margin: 0 auto; }
 
@@ -355,6 +436,8 @@ footer .copyright { margin-top: 24px; font-size: 0.8rem; color: #6a665e; }
   .hero { padding: 36px 20px 48px; }
   .copy-box { padding: 36px 22px; }
   .copy-btn { width: 100%; justify-content: center; padding: 20px 24px; }
+  .dist-grid { grid-template-columns: 1fr; }
+  .dist-card.copy-box { padding: 28px 22px 32px; }
 }
 
 /* ---------- トースト ---------- */

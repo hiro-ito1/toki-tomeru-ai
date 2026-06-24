@@ -68,23 +68,58 @@
 <section class="copy-section" id="copy">
   <div class="wrap">
     <h2 class="section-title">AIを手に入れる</h2>
-    <p class="section-note">下のボタンひとつで、人格定義書の全文がコピーされます。</p>
-    <div class="copy-box">
-      <p class="toc">
-        <strong>収録内容</strong><br>
-        技術的突然変異の法則 ／ スカウター ／ 時を止める魔法<br>
-        イメトレの正しいやり方 ／ 試合で100%以上を出す方法 ／ 保護者向け対応 ほか
-      </p>
-      <button class="copy-btn" id="copyBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-        <span id="copyLabel">人格定義書をコピー</span>
-      </button>
-      <p class="copy-hint">コピーしたら、新しいチャットの冒頭に貼り付けてください。</p>
-      <p class="copy-fallback"><a href="jinkaku.md" target="_blank" rel="noopener">うまくコピーできない時は、こちらで全文を開く →</a></p>
+    <p class="section-note">どちらも無料。ボタンひとつで全文がコピーされます。</p>
+
+    <div class="dist-grid">
+
+      <!-- ② 技術的突然変異の法則（まず、ここから） -->
+      <div class="copy-box dist-card featured">
+        <span class="step-badge">まず、ここから</span>
+        <h3 class="dist-title">技術的突然変異の法則AI</h3>
+        <p class="dist-sub">「できたのに忘れる」を卒業する。すべての土台になる核。</p>
+
+        <div class="coach-note">
+          <p>これを最初にできるようになって欲しい。</p>
+          <p>これがマスターできれば、<strong>ドカドカ追い抜いていけるはず！</strong></p>
+          <p>ほとんど誰も知らないから、できなくても焦らないで！</p>
+          <p>できるようになって実行できている人は、間違いなく<strong>九州トップクラス以上</strong>は行っていますよ！</p>
+        </div>
+
+        <button class="copy-btn" type="button" data-src="gijutsu.md" data-label="技術的突然変異の法則をコピー">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="copy-label">技術的突然変異の法則をコピー</span>
+        </button>
+        <p class="copy-fallback"><a href="gijutsu.md" target="_blank" rel="noopener">全文を開く →</a></p>
+      </div>
+
+      <!-- ① 時を止める指導法AI（全部入り・完全版） -->
+      <div class="copy-box dist-card">
+        <span class="step-badge alt">全部入り・完全版</span>
+        <h3 class="dist-title">時を止める指導法AI</h3>
+        <p class="dist-sub">25年分の指導哲学を、まるごと一冊に。</p>
+
+        <p class="toc">
+          <strong>収録内容</strong><br>
+          技術的突然変異の法則 ／ スカウター ／ 時を止める魔法<br>
+          イメトレの正しいやり方 ／ 試合で100%以上を出す方法 ／ 保護者向け対応 ほか
+        </p>
+
+        <button class="copy-btn" type="button" data-src="jinkaku.md" data-label="人格定義書をコピー">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="copy-label">人格定義書をコピー</span>
+        </button>
+        <p class="copy-fallback"><a href="jinkaku.md" target="_blank" rel="noopener">全文を開く →</a></p>
+      </div>
+
     </div>
+
+    <p class="copy-hint">コピーしたら、新しいチャットの冒頭に貼り付けてください。</p>
   </div>
 </section>
 
@@ -105,7 +140,7 @@
         <span class="badge"></span>
         <div class="body">
           <h4>定義書をコピーする</h4>
-          <p>上の「人格定義書をコピー」ボタンを押すと、全文がコピーされます。</p>
+          <p>上の2つから選んでボタンを押すと、全文がコピーされます。まずは「技術的突然変異の法則」から。</p>
         </div>
       </div>
       <div class="step">
@@ -132,44 +167,27 @@
 
 <script>
 (function () {
-  var btn   = document.getElementById('copyBtn');
-  var label = document.getElementById('copyLabel');
   var toast = document.getElementById('toast');
+  var cache = {};   // URLごとに読み込んだ全文を保持
 
-  // 定義書の正本。ここを更新すれば、ページの内容も自動で切り替わる。
-  var SOURCE_URL = 'jinkaku.md';
-  var cached = null;   // 一度読み込んだ全文を保持
-
-  // ページを開いた時に先読みしておく（コピーを一瞬で終わらせるため）
-  fetchSource().catch(function () { /* 失敗してもクリック時に再試行する */ });
-
-  function fetchSource() {
-    return fetch(SOURCE_URL, { cache: 'no-cache' })
+  function fetchSource(url) {
+    return fetch(url, { cache: 'no-cache' })
       .then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.text();
       })
-      .then(function (t) { cached = t; return t; });
+      .then(function (t) { cache[url] = t; return t; });
   }
 
-  function getText() {
-    if (cached !== null) return Promise.resolve(cached);
-    return fetchSource();
+  function getText(url) {
+    if (cache[url] != null) return Promise.resolve(cache[url]);
+    return fetchSource(url);
   }
 
   function showToast(msg) {
     toast.textContent = msg;
     toast.classList.add('show');
     setTimeout(function () { toast.classList.remove('show'); }, 2600);
-  }
-
-  function flashButton() {
-    btn.classList.add('done');
-    label.textContent = 'コピーしました！';
-    setTimeout(function () {
-      btn.classList.remove('done');
-      label.textContent = '人格定義書をコピー';
-    }, 2200);
   }
 
   function legacyCopy(text) {
@@ -186,26 +204,43 @@
     return ok;
   }
 
-  function doCopy(text) {
+  function copyWithFeedback(text, btn, labelEl, original) {
+    function ok() {
+      btn.classList.add('done');
+      if (labelEl) labelEl.textContent = 'コピーしました！';
+      showToast('コピーしました！');
+      setTimeout(function () {
+        btn.classList.remove('done');
+        if (labelEl) labelEl.textContent = original;
+      }, 2200);
+    }
+    function fail() { showToast('コピーできませんでした。下のリンクから開いてください'); }
+
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(function () {
-        flashButton(); showToast('コピーしました！');
-      }, function () {
-        if (legacyCopy(text)) { flashButton(); showToast('コピーしました！'); }
-        else { showToast('コピーできませんでした。下のリンクから開いてください'); }
+      navigator.clipboard.writeText(text).then(ok, function () {
+        if (legacyCopy(text)) ok(); else fail();
       });
     } else {
-      if (legacyCopy(text)) { flashButton(); showToast('コピーしました！'); }
-      else { showToast('コピーできませんでした。下のリンクから開いてください'); }
+      if (legacyCopy(text)) ok(); else fail();
     }
   }
 
-  btn.addEventListener('click', function () {
-    getText().then(function (text) {
-      doCopy(text);
-    }, function () {
-      // 読み込み失敗（ローカルでファイルを直接ダブルクリックした場合など）
-      showToast('読み込めませんでした。下のリンクから全文を開いてください');
+  var buttons = document.querySelectorAll('.copy-btn');
+  Array.prototype.forEach.call(buttons, function (btn) {
+    var url = btn.getAttribute('data-src');
+    var labelEl = btn.querySelector('.copy-label');
+    var original = btn.getAttribute('data-label') || (labelEl ? labelEl.textContent : 'コピー');
+
+    // 開いた時に先読み（コピーを一瞬で終わらせるため）
+    fetchSource(url).catch(function () { /* クリック時に再試行する */ });
+
+    btn.addEventListener('click', function () {
+      getText(url).then(function (text) {
+        copyWithFeedback(text, btn, labelEl, original);
+      }, function () {
+        // 読み込み失敗（ローカルでファイルを直接ダブルクリックした場合など）
+        showToast('読み込めませんでした。下のリンクから全文を開いてください');
+      });
     });
   });
 })();
