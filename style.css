@@ -456,3 +456,92 @@ footer .copyright { margin-top: 24px; font-size: 0.8rem; color: #6a665e; }
   z-index: 100;
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ---------- 更新履歴 ---------- */
+.changelog { background: var(--bg-soft); }
+
+.version-now {
+  text-align: center;
+  font-family: var(--serif);
+  color: var(--ink-dim);
+  letter-spacing: 0.08em;
+  margin: -24px 0 44px;
+}
+.version-now .v-num {
+  color: var(--aka);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: 8px;
+}
+
+.cl-list {
+  list-style: none;
+  max-width: 620px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 8px;
+}
+.cl-list::before {
+  content: "";
+  position: absolute;
+  left: 5px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--line);
+}
+
+.cl-item {
+  position: relative;
+  padding: 0 0 30px 28px;
+}
+.cl-item:last-child { padding-bottom: 0; }
+.cl-item::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 7px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--aka);
+  box-shadow: 0 0 0 4px var(--bg-soft);
+}
+
+.cl-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+.cl-ver {
+  font-family: var(--serif);
+  color: var(--aka);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.cl-date { color: var(--ink-dim); font-size: 0.85rem; }
+
+.cl-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+.cl-desc {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  line-height: 1.85;
+  margin-bottom: 10px;
+}
+.cl-link {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+.cl-link:hover { color: var(--aka); }
+
+.cl-note {
+  text-align: center;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  margin-top: 44px;
+}
+.cl-note a { color: var(--gold); }
