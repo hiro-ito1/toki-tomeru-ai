@@ -555,6 +555,15 @@ footer .copyright { margin-top: 24px; font-size: 0.8rem; color: #6a665e; }
 }
 .usage .step .body p + p { margin-top: 10px; }
 .usage .step .body strong { color: var(--aka); }
+.usage-tip {
+  margin-top: 10px !important;
+  font-size: 0.9rem !important;
+  color: var(--ink-dim) !important;
+  background: var(--aka-soft);
+  border-radius: 4px;
+  padding: 10px 14px;
+}
+.usage-tip strong { color: var(--gold) !important; }
 
 /* ---------- テスター募集 ---------- */
 .tester { background: var(--bg-soft); text-align: center; }
