@@ -87,6 +87,15 @@ body {
   margin: 0 auto 14px;
 }
 
+.hero .hero-week {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 3.4vw, 1.25rem);
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  margin-top: 14px;
+}
+.hero .hero-week strong { color: var(--aka); font-weight: 700; }
+
 .hero .sub {
   color: var(--ink-dim);
   font-size: 0.95rem;
