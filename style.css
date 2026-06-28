@@ -545,3 +545,53 @@ footer .copyright { margin-top: 24px; font-size: 0.8rem; color: #6a665e; }
   margin-top: 44px;
 }
 .cl-note a { color: var(--gold); }
+
+/* ---------- 使い方（年配の方にも読みやすく） ---------- */
+.usage .step .body h4 { font-size: 1.25rem; margin-bottom: 8px; }
+.usage .step .body p {
+  font-size: 1.02rem;
+  line-height: 2;
+  color: var(--ink);
+}
+.usage .step .body p + p { margin-top: 10px; }
+.usage .step .body strong { color: var(--aka); }
+
+/* ---------- テスター募集 ---------- */
+.tester { background: var(--bg-soft); text-align: center; }
+.tester-box {
+  border: 1px solid var(--aka);
+  box-shadow: 0 0 0 1px rgba(200,16,46,0.25), 0 14px 44px rgba(200,16,46,0.18);
+  text-align: left;
+}
+.tester-box .copy-btn { width: 100%; justify-content: center; margin-top: 8px; }
+.tester-box .copy-fallback { text-align: center; }
+
+.line-add {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line);
+  text-align: center;
+}
+.line-add-label {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.line-add a { display: inline-block; }
+.line-add img { height: 44px; width: auto; }
+
+/* ---------- もっと知りたい方へ（ひっそり） ---------- */
+.more-read {
+  padding: 0 0 48px;
+  text-align: center;
+  background: var(--bg);
+}
+.more-read-link a {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.more-read-link a:hover { color: var(--gold); border-color: var(--gold); }
