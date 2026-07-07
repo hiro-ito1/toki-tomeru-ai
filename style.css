@@ -306,6 +306,30 @@ section { padding: 72px 0; }
 
 .copy-fallback a { color: var(--gold); }
 
+/* ---------- コピー案内（読まなくてOK） ---------- */
+.copy-guide {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  padding: 24px 26px;
+  background: var(--aka);
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 34px rgba(200,16,46,0.35);
+}
+.copy-guide-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 12px;
+}
+.copy-guide-body {
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: #fff;
+  margin: 0;
+}
+.copy-guide-body strong { color: var(--gold); font-weight: 700; }
+
 /* ---------- 配布カード（2枚並び） ---------- */
 .dist-grid {
   display: grid;
