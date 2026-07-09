@@ -637,3 +637,47 @@ footer .copyright { margin-top: 24px; font-size: 0.8rem; color: #6a665e; }
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .more-read-link a:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ---------- ヒーロー改（対話型コーチ） ---------- */
+.hero-lead-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 5vw, 2.1rem);
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  margin: 8px 0 32px;
+  text-wrap: balance;
+}
+.hero-lead-title .sm { display: block; font-size: 0.8em; margin-bottom: 0.45em; color: var(--ink); }
+.hero-lead-title .aka { color: var(--aka); }
+
+.hero-poem { max-width: 29em; margin: 0 auto; display: flex; flex-direction: column; gap: 1.2em; }
+.hero-poem p { font-size: 1.02rem; line-height: 2.05; color: #e9e5db; }
+.hero-poem .pm-lead { font-family: var(--serif); font-size: 1.14rem; color: var(--ink); }
+.hero-poem .pm-lead b { color: var(--aka); font-weight: 700; }
+.hero-poem .kin { color: var(--gold); font-weight: 700; font-size: 1.5em; letter-spacing: 0.02em; }
+.hero-poem .pm-fin { font-family: var(--serif); font-size: 1.08rem; color: var(--ink); line-height: 1.95; }
+
+.hero-cta {
+  display: inline-block;
+  margin-top: 42px;
+  background: var(--aka);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  padding: 16px 42px;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(200,16,46,0.4);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.hero-cta:hover { background: var(--aka-deep); transform: translateY(-2px); }
+
+/* 機能説明（ヒーローから移動） */
+.get-feature { text-align: center; color: var(--ink-dim); margin: -24px auto 38px; max-width: 34em; line-height: 1.95; }
+.get-feature .big { display: block; font-family: var(--serif); color: var(--ink); font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+.get-feature .wk b { color: var(--aka); font-weight: 700; }
+
+/* 案内ボックスの強調（上書き） */
+.copy-guide-title { font-size: 1.5rem; line-height: 1.55; }
+.copy-guide-title .hl { background: linear-gradient(transparent 55%, rgba(201,168,106,0.6) 55%); padding: 0 0.12em; border-radius: 2px; }
