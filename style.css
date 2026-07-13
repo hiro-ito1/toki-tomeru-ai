@@ -681,3 +681,23 @@ footer .copyright { margin-top: 24px; font-size: 0.8rem; color: #6a665e; }
 /* 案内ボックスの強調（上書き） */
 .copy-guide-title { font-size: 1.5rem; line-height: 1.55; }
 .copy-guide-title .hl { background: linear-gradient(transparent 55%, rgba(201,168,106,0.6) 55%); padding: 0 0.12em; border-radius: 2px; }
+
+/* ---------- 使い方の警告ボックス ---------- */
+.usage-warn {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  padding: 20px 22px;
+  background: var(--aka);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(200,16,46,0.35);
+}
+.usage-warn p { color: #fff; font-weight: 700; font-size: 1.05rem; line-height: 1.85; }
+.usage-warn .usage-warn-sub { font-weight: 400; font-size: 0.9rem; margin-top: 12px; opacity: 0.95; }
+.usage-warn .usage-warn-sub strong { color: var(--gold); }
+
+/* ---------- フッターの公式LINE ---------- */
+.footer-line { margin: 28px auto 0; padding-top: 24px; border-top: 1px solid var(--line); max-width: 420px; }
+.footer-line-label { color: var(--ink-dim); font-size: 0.88rem; margin-bottom: 12px; }
+.footer-line a { display: inline-block; }
+.footer-line img { height: 40px; width: auto; }
