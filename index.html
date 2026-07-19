@@ -109,53 +109,171 @@
 </section>
 
 <!-- ============ 使い方 ============ -->
-<section class="usage">
+<section class="usage" id="usage">
   <div class="wrap">
     <h2 class="section-title">使い方</h2>
     <p class="section-note">スマホでもできます。順番にやれば大丈夫です。</p>
+
+    <div class="free-banner">
+      <div class="free-checks">
+        <p class="free-check"><span class="ck">✔</span><span>AIも、テニスの突然変異AIも<br><span class="free-strong">完全無料</span>です。</span></p>
+        <p class="free-check"><span class="ck">✔</span><span>安心して、いつでもご利用ください。</span></p>
+      </div>
+      <p class="free-banner-note">※ AIアプリは、無料プランのままで大丈夫です。</p>
+    </div>
 
     <div class="usage-warn">
       <p>‼️‼️ まず、スマホなどに <strong>AIアプリ</strong>（Claude・ChatGPT・Gemini など）を<br><strong>ダウンロードして登録</strong>しないと、ご利用できません!! ‼️</p>
       <p class="usage-warn-sub">※ ブラウザで「AI」と書いてあるページではできません。かならず<strong>アプリ本体</strong>を入れてください。</p>
     </div>
 
-    <div class="steps">
-      <div class="step">
-        <span class="badge"></span>
-        <div class="body">
-          <h4>AIアプリを入れる</h4>
-          <p><code>Claude</code>・<code>ChatGPT</code>・<code>Gemini</code> などのアプリを、スマホにダウンロードします。</p>
-          <p class="usage-tip">※ <strong>Claude・ChatGPT がおすすめ</strong>。Gemini（ジェミニ）は内容と違う方向に進むことがあります。</p>
+    <div class="flow-grid">
+
+      <!-- ① AIアプリを入れる -->
+      <div class="flow-card">
+        <div class="flow-head"><span class="flow-num">1</span><h4>AIアプリを<br>入れる</h4></div>
+        <div class="flow-visual">
+          <div class="app-row">
+            <span class="app-ic ic-claude"><svg viewBox="0 0 24 24" aria-hidden="true"><g stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 3.5v4.6M12 15.9v4.6M3.5 12h4.6M15.9 12h4.6M6 6l3.2 3.2M14.8 14.8L18 18M18 6l-3.2 3.2M9.2 14.8L6 18"/></g></svg></span>
+            <span class="app-name">Claude</span>
+          </div>
+          <div class="app-row">
+            <span class="app-ic ic-gpt"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.6"><ellipse cx="12" cy="12" rx="8.5" ry="3.6"/><ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="8.5" ry="3.6" transform="rotate(120 12 12)"/></g></svg></span>
+            <span class="app-name">ChatGPT</span>
+          </div>
+          <div class="app-row">
+            <span class="app-ic ic-gem"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gemg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4e82ee"/><stop offset="1" stop-color="#9168c0"/></linearGradient></defs><path fill="url(#gemg)" d="M12 2c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z"/></svg></span>
+            <span class="app-name">Gemini</span>
+          </div>
+          <p class="app-etc">など</p>
+        </div>
+        <p class="flow-cap">スマホに<strong>ダウンロード</strong></p>
+      </div>
+
+      <span class="flow-arrow" aria-hidden="true">➜</span>
+
+      <!-- ② メールなどで登録 -->
+      <div class="flow-card">
+        <div class="flow-head"><span class="flow-num">2</span><h4>メールなどで<br>登録</h4></div>
+        <div class="flow-visual">
+          <div class="mock-panel">
+            <p class="mock-title">アカウントで登録</p>
+            <div class="mock-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#555" stroke-width="2"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
+              メールで登録
+            </div>
+            <div class="mock-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke-width="3"><path stroke="#ea4335" d="M4.9 9.4A7.6 7.6 0 0 1 19.1 9.4"/><path stroke="#fbbc05" d="M4.9 9.4A7.6 7.6 0 0 0 7.1 17.9"/><path stroke="#34a853" d="M7.1 17.9A7.6 7.6 0 0 0 15.8 18.6"/><path stroke="#4285f4" d="M15.8 18.6A7.6 7.6 0 0 0 19.6 12M12.5 12h7.1"/></svg>
+              Googleで登録
+            </div>
+            <div class="mock-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="#111"><path d="M12 8c-1-.9-2.6-1-3.8-.2-1.7 1.1-2 3.7-1 5.9.8 1.8 2 3.3 3.3 3.3.7 0 1-.4 1.5-.4s.8.4 1.5.4c1.3 0 2.5-1.5 3.3-3.3 1-2.2.7-4.8-1-5.9-1.2-.8-2.8-.7-3.8.2z"/><path d="M12.2 7.3c.1-1 .7-2 1.5-2.5.2 1-.3 2.1-1.5 2.5z"/></svg>
+              Apple IDで登録
+            </div>
+          </div>
+        </div>
+        <p class="flow-cap">🔒 安全・安心の仕組み</p>
+      </div>
+
+      <span class="flow-arrow" aria-hidden="true">➜</span>
+
+      <!-- ③ コピー -->
+      <div class="flow-card">
+        <div class="flow-head"><span class="flow-num">3</span><h4>コピー</h4></div>
+        <div class="flow-visual">
+          <div class="mock-panel mock-copy">
+            <span class="tap-badge">1回ポン！</span>
+            <div class="mock-red-btn">突然変異AIをコピー</div>
+            <span class="tap-hand">👆</span>
+          </div>
+        </div>
+        <p class="flow-cap">赤いボタンを<strong>1回タップ</strong>。<br>長押しは不要</p>
+      </div>
+
+      <span class="flow-arrow" aria-hidden="true">➜</span>
+
+      <!-- ④ AIに貼り付け -->
+      <div class="flow-card">
+        <div class="flow-head"><span class="flow-num">4</span><h4>AIに<br>貼り付け</h4></div>
+        <div class="flow-visual">
+          <div class="mock-panel mock-chat">
+            <div class="mock-ai-row">
+              <span class="mock-avatar">AI</span>
+              <span class="mock-bubble">データは長いですが、読まなくていいです。</span>
+            </div>
+            <div class="mock-paste"><i></i><i></i><i></i></div>
+            <div class="mock-send">そのまま送信 ➤</div>
+          </div>
+        </div>
+        <p class="flow-cap">貼り付けて送信。<br>あとは<strong>質問するだけ！</strong></p>
+      </div>
+
+    </div>
+
+    <p class="flow-note">※ <strong>Claude・ChatGPT がおすすめ</strong>。Gemini（ジェミニ）は内容と違う方向に進むことがあります。</p>
+  </div>
+</section>
+
+<!-- ============ 上手くいかないとき Q&A ============ -->
+<section class="qa" id="qa">
+  <div class="wrap">
+    <h2 class="section-title">上手くいかないとき Q&amp;A</h2>
+    <p class="section-note">困ったときは、まずここを見てください。</p>
+
+    <div class="qa-list">
+
+      <div class="qa-item">
+        <p class="qa-q"><span class="qa-mark">Q1</span>なぜか突然変異AIが使えません</p>
+        <div class="qa-a">
+          <p class="qa-a-lead">AIアプリのダウンロードと登録は終わっていますか？</p>
+          <p>Webブラウザではなく、まずは<strong>AIのアプリをスマホに入れないと</strong>、突然変異AIは動きません。</p>
         </div>
       </div>
-      <div class="step">
-        <span class="badge"></span>
-        <div class="body">
-          <h4>メールなどで登録</h4>
-          <p>アプリを開いて、メールアドレスなどでアカウントを登録します（無料で使えます）。</p>
+
+      <div class="qa-item">
+        <p class="qa-q"><span class="qa-mark">Q2</span>データをうまく貼り付けられません</p>
+        <div class="qa-a">
+          <p class="qa-a-lead">コピーするとき、長押ししていませんか？</p>
+          <p>長押しすると選択範囲がズレて失敗しやすいです。このページの<strong>赤いコピーボタンを「1回だけポンとタップ」</strong>してコピーしてください。</p>
         </div>
       </div>
-      <div class="step">
-        <span class="badge"></span>
-        <div class="body">
-          <h4>コピーして貼り付け</h4>
-          <p>上の<strong>赤いボタン</strong>を押してコピー → 入力欄に貼り付けます。<strong>長い文が出ても、読まなくて大丈夫。</strong></p>
+
+      <div class="qa-item">
+        <p class="qa-q"><span class="qa-mark">Q3</span>貼り付けたら、ものすごい長文が出てきて不安です…</p>
+        <div class="qa-a">
+          <p class="qa-a-lead">その文章は読まなくてOKです！そのまま「送信」を押してください。</p>
+          <p>AIを突然変異させるためのデータがたくさん入っているだけです。送信すれば、AIからあなたのテニスの悩みについての質問が始まります。</p>
         </div>
       </div>
-      <div class="step">
-        <span class="badge"></span>
-        <div class="body">
-          <h4>送信して、会話する</h4>
-          <p>そのまま送信。あとは、聞きたいことを書き込むだけ。コーチとして答えてくれます。</p>
+
+      <div class="qa-item">
+        <p class="qa-q"><span class="qa-mark">Q4</span>普通のAIに戻ってしまいました</p>
+        <div class="qa-a">
+          <p class="qa-a-lead">データを貼り付けた「そのチャットルーム内」だけで動く仕組みです。</p>
+          <p>別の画面に行ってしまったときは、画面左上の<strong>「三本線メニュー（≡）」</strong>を押して、データを貼り付けたチャットルームに戻ってください。</p>
         </div>
       </div>
-      <div class="step">
-        <span class="badge"></span>
-        <div class="body">
-          <h4>次回からは、同じチャットに戻る</h4>
-          <p>続きは<strong>同じチャット</strong>でやってください。アプリ<strong>左上の三本線（≡）</strong>を押すと、チャット一覧から選べます。</p>
+
+      <div class="qa-item">
+        <p class="qa-q"><span class="qa-mark">Q5</span>「豪華認定証」が出ないのですが？</p>
+        <div class="qa-a">
+          <p class="qa-a-lead">チャットで「豪華認定証は？」と、そのまま聞いてみてください。</p>
+          <p>レベル1は簡単な認定証ですが、レベル2になると豪華な認定証が出ます。出ない場合もあるので、そのときは直接AIにおねだりすればOKです。</p>
         </div>
       </div>
+
+      <div class="qa-item">
+        <p class="qa-q"><span class="qa-mark">Q6</span>チャットが長くなって、動きが遅くなりました</p>
+        <div class="qa-a">
+          <p class="qa-a-lead">これまでの内容を、新しいチャットに引き継げます！</p>
+          <ol class="qa-steps">
+            <li>チャット欄に<strong>「ここで私ができた事を全て出して」</strong>と書いて送信します。</li>
+            <li>出てきたまとめをコピーします。</li>
+            <li>新しいチャットルームを開いて貼り付ければ、続きから再開できます。</li>
+          </ol>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
